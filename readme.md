@@ -9,7 +9,8 @@ Here:
 1. Navigate to `https://serene-frangipane-7fd25b.netlify.app/`,
 2. Open dev tools
 3. Run
- ```(() => {
+ ```js
+ (() => {
   const params = new URLSearchParams(location.search);
   const version = params.get("version") || "1";
   const target = `/step30?version=${version}`;
