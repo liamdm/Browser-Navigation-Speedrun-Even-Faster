@@ -4,7 +4,7 @@ Challenge solved in < 0.1s. It also took GPT less than 5s to write up the explan
 
 <img width="1611" height="471" alt="image" src="https://github.com/user-attachments/assets/7f219a92-496b-4d5b-bcce-4737f67c6295" />
 
-Here:
+Note: This will remain a valid solution imo till the site actually attempts to implement some form of true anti-scrape. The level of anti-scrape on this site is significantly worse than the majority of existing anti-scrape tools tbh - and most of the time for a browser navigation challenge the real key is "trying to bypass the scrapers" rather than trying to get the LLM to figure out where to click - naturally as exceptional language task executors, LLMs have a great ability to "finding the right element on a page". I guess that's why there's the 5s time limit to "spice things up"?
 
 ## Finish it too
 
@@ -15,7 +15,7 @@ Here:
  (() => {
   const params = new URLSearchParams(location.search);
   const version = params.get("version") || "1";
-  const target = `/step30?version=${version}`;
+  const target = `/finish?version=${version}`;
 
   if (window.__reactRouterDataRouter && typeof window.__reactRouterDataRouter.navigate === "function") {
     window.__reactRouterDataRouter.navigate(target, { replace: true });
