@@ -1,8 +1,28 @@
 # Browser Navigation Challenge — Finish Route Discovery via Submit Handler Inspection
 
-Challenge solved `https://serene-frangipane-7fd25b.netlify.app/finish?version=1`, it took GPT 5s to write up the explanation of the 3 lines of console code that took 0.01s to run.
+Challenge solved in < 0.1s. It also took GPT less than 5s to write up the explanation too.
 
 Here:
+
+## Finish it too
+
+1. Navigate to `https://serene-frangipane-7fd25b.netlify.app/`,
+2. Open dev tools
+3. Run
+ ```(() => {
+  const params = new URLSearchParams(location.search);
+  const version = params.get("version") || "1";
+  const target = `/step30?version=${version}`;
+
+  if (window.__reactRouterDataRouter && typeof window.__reactRouterDataRouter.navigate === "function") {
+    window.__reactRouterDataRouter.navigate(target, { replace: true });
+    return;
+  }
+
+  history.pushState(history.state, "", target);
+  window.dispatchEvent(new PopStateEvent("popstate"));
+})();
+```
 
 ## Overview
 
