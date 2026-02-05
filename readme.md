@@ -1,6 +1,6 @@
 # Browser Navigation Challenge — Finish Route Discovery via Submit Handler Inspection
 
-Challenge solved in < 0.1s. It also took GPT less than 5s to write up the explanation too. Not sure why everyone is inspecting the session state, react is a dumb beast.
+Challenge solved in < 0.1s. It also took GPT less than 5s to write up the explanation too. Not sure why everyone is inspecting the session state when the navigation handler is entirely client side.
 
 <img width="1611" height="471" alt="image" src="https://github.com/user-attachments/assets/7f219a92-496b-4d5b-bcce-4737f67c6295" />
 
