@@ -17,11 +17,6 @@ Note: This will remain a valid solution imo till the site actually attempts to i
   const version = params.get("version") || "1";
   const target = `/finish?version=${version}`;
 
-  if (window.__reactRouterDataRouter && typeof window.__reactRouterDataRouter.navigate === "function") {
-    window.__reactRouterDataRouter.navigate(target, { replace: true });
-    return;
-  }
-
   history.pushState(history.state, "", target);
   window.dispatchEvent(new PopStateEvent("popstate"));
 })();
