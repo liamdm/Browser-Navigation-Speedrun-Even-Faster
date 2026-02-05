@@ -49,9 +49,9 @@ Inspection of the page revealed that the final input form used a React-controlle
 
 This revealed the submit handler function:
 
-<code>
+```
 onSubmit: oe(se)
-</code>
+```
 
 This indicated that the function `oe` contained the final validation and navigation logic.
 
@@ -61,7 +61,7 @@ This indicated that the function `oe` contained the final validation and navigat
 
 Dumping the function source revealed the following logic:
 
-<code>
+```js
 se => {
   se && se.preventDefault();
 
@@ -82,7 +82,7 @@ se => {
         setTimeout(() => h(!1), 2000)
       )
 }
-</code>
+```
 
 ---
 
@@ -90,9 +90,9 @@ se => {
 
 The navigation logic clearly revealed the completion route:
 
-<code>
+```js
 o("/finish")
-</code>
+```
 
 This confirmed:
 
@@ -108,9 +108,9 @@ Breaking down the function:
 
 ### Input Normalization
 
-<code>
+```js
 const ne = E.trim().toUpperCase().replace(/\s/g,"");
-</code>
+```
 
 The entered code was normalized by:
 
@@ -122,9 +122,9 @@ The entered code was normalized by:
 
 ### Code Validation
 
-<code>
+```js
 Cv(c, ne)
-</code>
+```
 
 This function verified whether the code matched the expected value for the current step.
 
@@ -132,11 +132,11 @@ This function verified whether the code matched the expected value for the curre
 
 ### Completion Navigation
 
-<code>
+```js
 c < Yr
   ? o(`/step${c+1}?version=${u}`)
   : o("/finish")
-</code>
+```
 
 This logic revealed that:
 
@@ -151,10 +151,10 @@ This line directly exposed the hidden finish endpoint.
 
 After discovering the route, it was confirmed that `/finish` could be accessed directly using browser history manipulation.
 
-<code>
+```js
 history.pushState(history.state, "", "/finish");
 window.dispatchEvent(new PopStateEvent("popstate"));
-</code>
+```
 
 This successfully loaded the completion page without solving any challenge logic.
 
